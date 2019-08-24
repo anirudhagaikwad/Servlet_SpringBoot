@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+html {
+  /*background: url(namaste.jpg) no-repeat;*/
+  	
+  font-family: "Lucida Sans", sans-serif;
+  background-color:#f1f1f1
+  background-size: cover;
+}
+
+.header {
+  
+  background-color:  #4caf50;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+.footer {
+  background-color:  #4caf50;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+    
+    }
+
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.h1{
+  color: #ffffff;
+  font-weight: 500;
+  
+  float: left;
+  font-size: 40px;
+  border-bottom: 6px solid #4caf50;
+  margin-bottom: 50px;
+  padding: 13px 0;
+}
+.input[type = "text"],.input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: #5f5f5f;
+  border-radius: 24px;
+  transition: 0.25s;
+  
+}
+.input[type = "text"]:focus,.input[type = "password"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+.input[type = "submit"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: #5f5f5f;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.input[type = "submit"]:hover{
+  background: #4caf50;
+}
