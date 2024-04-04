@@ -1,4 +1,6 @@
 # JavaServlet
 Java-Servlet Examples 
-1)Simple Login Form with JDBC
-2)LoginSignUp Form with JDBC
+Java-Servlet REST API
+Java-Servlet SOAP API
+JAX-RS
+DI
