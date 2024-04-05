@@ -1,0 +1,50 @@
+To test your Spring Boot application endpoints in Postman, you need to provide the appropriate URL and request body for each HTTP method (GET, POST, PUT, DELETE). Here's how you can test each endpoint:
+
+In Postman, select the request where you're trying to create a new user.
+Go to the "Body" tab.
+Select the "raw" option.
+From the dropdown menu next to "raw", choose "JSON".
+Enter the user data in JSON format in the text area.
+
+1. GET all users: 
+   - URL: `http://localhost:8082/api/users`
+   - Method: GET
+
+2. GET user by ID:
+   - URL: `http://localhost:8082/api/users/{id}`
+   - Method: GET
+   - Replace `{id}` with the ID of the user you want to retrieve.
+
+3. Create a new user:
+   - URL: `http://localhost:8082/api/users`
+   - Method: POST
+   - Body (as JSON):
+     ```json
+     {
+         "username": "john_doe",
+         "password": "password123",
+         "email": "john@example.com"
+     }
+     ```
+
+4. Update an existing user:
+   - URL: `http://localhost:8082/api/users/{id}`
+   - Method: PUT
+   - Replace `{id}` with the ID of the user you want to update.
+   - Body (as JSON):
+     ```json
+     {
+         "username": "updated_username",
+         "password": "updated_password",
+         "email": "updated_email@example.com"
+     }
+     ```
+
+5. Delete a user:
+   - URL: `http://localhost:8082/api/users/{id}`
+   - Method: DELETE
+   - Replace `{id}` with the ID of the user you want to delete.
+
+Make sure your Spring Boot application is running on `http://localhost:8082` and replace `{id}` with the appropriate user ID for testing individual user endpoints.
+
+Ensure that you're sending the correct data format and method for each endpoint. You can use Postman's UI to enter the URL, select the appropriate HTTP method, and provide the request body for POST and PUT requests.
