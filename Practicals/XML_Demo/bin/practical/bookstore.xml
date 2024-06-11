@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book category="fiction">
+        <title lang="en">Harry Potter</title>
+        <author>J.K. Rowling</author>
+        <year>1997</year>
+        <price>Rs. 129.99</price>
+    </book>
+    <book category="programming">
+        <title lang="en">Learning XML</title>
+        <author>Erik T. Ray</author>
+        <year>2003</year>
+        <price>Rs. 339.95</price>
+    </book>
+</bookstore>
