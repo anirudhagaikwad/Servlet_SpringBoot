@@ -33,12 +33,9 @@ public class JDBC_CURD {
     void insertData(int stdID, String stdName) {
         this.registerDriver();
         try (Connection con = DriverManager.getConnection(this.URL, this.USER, this.PASSWD)) {
-            String query = "INSERT INTO stdRegistration (stdID, stdName) VALUES (?, ?)";
-            try (java.sql.PreparedStatement pstmt = con.prepareStatement(query)) {
-                pstmt.setInt(1, stdID);
-                pstmt.setString(2, stdName);
-                pstmt.executeUpdate();
-            }
+            String query = "INSERT INTO stdRegistration (stdID, stdName) VALUES (" + stdID + ", '" + stdName + "')";
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -63,12 +60,9 @@ public class JDBC_CURD {
     void updateData(int stdID, String newStdName) {
         this.registerDriver();
         try (Connection con = DriverManager.getConnection(this.URL, this.USER, this.PASSWD)) {
-            String query = "UPDATE stdRegistration SET stdName = ? WHERE stdID = ?";
-            try (java.sql.PreparedStatement pstmt = con.prepareStatement(query)) {
-                pstmt.setString(1, newStdName);
-                pstmt.setInt(2, stdID);
-                pstmt.executeUpdate();
-            }
+            String query = "UPDATE stdRegistration SET stdName = '" + newStdName + "' WHERE stdID = " + stdID;
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -77,11 +71,9 @@ public class JDBC_CURD {
     void deleteData(int stdID) {
         this.registerDriver();
         try (Connection con = DriverManager.getConnection(this.URL, this.USER, this.PASSWD)) {
-            String query = "DELETE FROM stdRegistration WHERE stdID = ?";
-            try (java.sql.PreparedStatement pstmt = con.prepareStatement(query)) {
-                pstmt.setInt(1, stdID);
-                pstmt.executeUpdate();
-            }
+            String query = "DELETE FROM stdRegistration WHERE stdID = " + stdID;
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
