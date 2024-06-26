@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>hello_world_servlet</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+     <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+<!-- 
+1)Project Structure
+xmlns: Specifies the XML namespace for the Maven POM file.
+xmlns:xsi: Defines the XML Schema instance namespace.
+xsi:schemaLocation: Specifies the location of the XML schema for validation.
+modelVersion: Indicates the model version of the POM. The value 4.0.0 is the current version.
+
+2)Project Coordinates
+groupId: A unique identifier for the project group. It's often structured like a Java package name (e.g., com.example).
+artifactId: A unique identifier for the project within the group. This is the name of the project (e.g., hello_world_servlet).
+version: The version of the project (e.g., 0.0.1-SNAPSHOT). The SNAPSHOT suffix indicates it's a development version.
+packaging: Specifies the package type to be created, in this case, a WAR (Web Application Archive) file.
+
+3)Dependencies
+dependencies: Contains all the dependencies required by the project.
+dependency: Defines a single dependency.
+groupId: The group ID of the dependency (e.g., jakarta.platform).
+artifactId: The artifact ID of the dependency (e.g., jakarta.jakartaee-api).
+version: The version of the dependency (e.g., 10.0.0).
+scope: Indicates the classpath for which the dependency is used. provided means the dependency is provided by the runtime environment (e.g., the application server).
+
+4)Build Configuration
+build: Contains configuration related to the build process.
+plugins: Specifies the plugins used during the build process.
+plugin: Defines a single plugin.
+groupId: The group ID of the plugin (e.g., org.apache.maven.plugins).
+artifactId: The artifact ID of the plugin (e.g., maven-compiler-plugin).
+version: The version of the plugin (e.g., 3.8.1).
+configuration: Configuration specific to the plugin.
+source: Specifies the version of the Java source code (e.g., 17).
+target: Specifies the version of the Java bytecode (e.g., 17).
+maven-war-plugin: This plugin is used to build WAR files, which are used to package web applications for deployment.
+
+The jakarta.jakartaee-api dependency is provided by the application server, so it's marked with provided scope.
+-->
