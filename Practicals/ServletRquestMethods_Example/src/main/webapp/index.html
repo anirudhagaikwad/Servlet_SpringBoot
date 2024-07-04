@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmetic Calculator</title>
+</head>
+<body>
+    <h1>Arithmetic Calculator</h1>
+    <form action="calculate" method="post">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1" required><br><br>
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2" required><br><br>
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation">
+            <option value="add">Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+        </select><br><br>
+        <button type="submit">Calculate (POST)</button>
+    </form>
+    <form action="calculate" method="get">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1" required><br><br>
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2" required><br><br>
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation">
+            <option value="add">Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+        </select><br><br>
+        <button type="submit">Calculate (GET)</button>
+    </form>
+</body>
+</html>
