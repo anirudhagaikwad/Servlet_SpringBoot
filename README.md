@@ -22,12 +22,12 @@ https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/Mav
 ### 5)A servlet program to display request details A servlet program to handle user form
 https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/ServletRquestMethods_Example
 ### 6)A servlet program to create a cookie A servlet program to display cookie
-
+https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/CreateCookieServlet_Example
 ### 7)A servlet program to do session tracking
-
+https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/SessionServlet_Example
 ### 8)Write a program to implement chat Server using Server Socket and Socket class.
-
-### 9)Write a Servlet program to send username and password using HTML forms and authenticate the use
+https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/ChatServletApplication_Example
+### 9)Write a Servlet program to send username and password using HTML forms and authenticate the user
 
 ### 10)JSP program to display hello world.
 

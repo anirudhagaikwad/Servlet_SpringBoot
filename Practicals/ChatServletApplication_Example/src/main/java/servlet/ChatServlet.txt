@@ -1,0 +1,42 @@
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+@WebServlet("/chat")
+public class ChatServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    private List<String> messages = Collections.synchronizedList(new ArrayList<>());
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String message = request.getParameter("message");
+        if (message != null && !message.trim().isEmpty()) {
+            messages.add(message);
+        }
+        response.sendRedirect("chat.html");
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        synchronized (messages) {
+            out.println("[");
+            for (int i = 0; i < messages.size(); i++) {
+                out.print("\"" + messages.get(i) + "\"");
+                if (i < messages.size() - 1) {
+                    out.println(",");
+                }
+            }
+            out.println("]");
+        }
+    }
+}

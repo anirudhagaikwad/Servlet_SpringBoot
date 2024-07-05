@@ -1,0 +1,4 @@
+servlet\ChatServerEndpoint$Configurator.class
+servlet\ChatServerEndpoint.class
+servlet\ChatServlet.class
+servlet\LoginServlet.class
