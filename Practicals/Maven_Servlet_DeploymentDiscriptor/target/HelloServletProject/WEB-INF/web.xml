@@ -15,3 +15,57 @@
     </servlet-mapping>
 
 </web-app>
+
+<!-- 
+
+### `<?xml version="1.0" encoding="UTF-8"?>`
+
+This is the XML declaration which defines the XML version and the encoding used in the document.
+
+### `<web-app>`
+
+This is the root element of the web application deployment descriptor. It contains all the configuration information for the web application.
+
+#### Attributes:
+
+-xmlns: The XML namespace for the Jakarta EE web application descriptor.
+  - `https://jakarta.ee/xml/ns/jakartaee`: This is the namespace URL for Jakarta EE.
+  
+-xmlns:xsi: The XML Schema instance namespace.
+  - `http://www.w3.org/2001/XMLSchema-instance`: This is the namespace URL for the XML Schema instance.
+  
+-xsi:schemaLocation: This provides hints for validating the document against an XML Schema.
+  - `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd`: This indicates the namespace and the location of the XML Schema file used for validation.
+
+-version: Specifies the version of the web application descriptor.
+  - `6.0`: This indicates the version of the Jakarta EE web application descriptor schema being used.
+
+### `<servlet>`
+This element defines a servlet in the web application.
+
+#### Child Elements:
+-<servlet-name>: A logical name for the servlet. It is used to reference the servlet in other parts of the descriptor.
+  - `HelloWorldServlet`: The name given to the servlet.
+
+-<servlet-class>: The fully qualified class name of the servlet.
+  - `servlet.HelloWorldServlet`: The class that implements the servlet.
+
+### `<servlet-mapping>`
+This element defines a mapping between a servlet and a URL pattern.
+
+#### Child Elements:
+-<servlet-name>: This element references the logical name of the servlet as defined in the `<servlet>` element.
+  - `HelloWorldServlet`: The name of the servlet that this mapping is associated with.
+
+-<url-pattern>: This element specifies the URL pattern to which the servlet should respond.
+  - `/hello`: The URL pattern that will trigger the `HelloWorldServlet`.
+
+### Summary
+
+- Root Element: `<web-app>` defines the root of the web application descriptor.
+- Servlet Definition: `<servlet>` defines the servlet class and gives it a name.
+- Servlet Mapping: `<servlet-mapping>` maps the servlet to a specific URL pattern.
+- Schema Information: The attributes and namespace declarations at the top define the schema for validating this XML document against the Jakarta EE 6.0 web application descriptor standard.
+
+This structure allows the web server (such as Apache Tomcat) to understand how to route HTTP requests to the appropriate servlet based on the URL patterns defined.
+ -->

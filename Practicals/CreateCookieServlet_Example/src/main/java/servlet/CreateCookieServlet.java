@@ -19,7 +19,7 @@ public class CreateCookieServlet extends HttpServlet {
         // Create a new cookie
         Cookie cookie = new Cookie("username", "JakartaUser");
         // Set the max age of the cookie (in seconds)
-        cookie.setMaxAge(60 * 60 * 24); // 1 day
+        cookie.setMaxAge(60 * 60 * 24); // 1 day  cookie's maximum age to 86,400 seconds
         // Add the cookie to the response
         response.addCookie(cookie);
 
