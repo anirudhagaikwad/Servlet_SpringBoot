@@ -31,7 +31,7 @@ public class SetUsernameServlet extends HttpServlet {
 }
 
 /*
-This servlet, named SetUsernameServlet, sets a "username" attribute in the session. It is intended to be used in conjunction with the SessionServlet from your previous code example. Here’s a detailed explanation of the SetUsernameServlet:
+This servlet, named SetUsernameServlet, sets a "username" attribute in the session. It is intended to be used in conjunction with the SessionServlet 
 
 #Servlet Declaration:
 @WebServlet("/setUsername"): This annotation declares the servlet and maps it to the URL pattern /setUsername. When a client makes a request to this URL, the SetUsernameServlet will handle the request.
