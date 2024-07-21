@@ -1,5 +1,5 @@
 package signupin;
-/* http://www.h2database.com/html/tutorial.html */
+
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,6 +17,7 @@ public class H2ConsoleServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         try {
+            // Adjust webServer initialization for H2 version 2.3.230
             webServer = Server.createWebServer("-webPort", "8082", "-tcpAllowOthers", "-ifNotExists").start();
         } catch (SQLException e) {
             throw new ServletException("Failed to start H2 console", e);
