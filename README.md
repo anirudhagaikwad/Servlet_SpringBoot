@@ -15,7 +15,7 @@ Each section includes detailed examples, best practices, and exercises to help y
 | -------|---------------- | ----------------------------- |
 | 1|XML-example of how to Write and Parse an XML file using the DOM parser in Java |https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/XML_Demo |
 | 2|Understand Importance of Design Patterns in Enterprise Programming | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/DesignPattern |
-| 3|<span style="color: red;">Write a program to insert and retrieve the data from database using JDBC | https://github.com/anirudhagaikwad/Servlet_SpringBoot/blob/master/Practicals/JDBC_Example/src/practical/JDBC_CURD.java |
+| 3|<span style="color: red;" />Write a program to insert and retrieve the data from database using JDBC | https://github.com/anirudhagaikwad/Servlet_SpringBoot/blob/master/Practicals/JDBC_Example/src/practical/JDBC_CURD.java |
 | 4|<span style="color: red;">Write a program to demonstrate the use of Prepared Statement and Result Set interface | https://github.com/anirudhagaikwad/Servlet_SpringBoot/blob/master/Practicals/JDBC_Example/src/practical/JDBC_Demo2.java |
 | 5|Write a program to demonstrate the use of Row interface with all its types | https://github.com/anirudhagaikwad/Servlet_SpringBoot/blob/master/Practicals/JDBC_Example/src/practical/RowSetDemo.java |
 | 6|<span style="color: red;">Servlet Execution on tomcat | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/Maven_Servlet_DeploymentDiscriptor |
