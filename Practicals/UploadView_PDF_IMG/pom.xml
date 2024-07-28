@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>JSP_Example</artifactId>
+  <artifactId>UploadView_PDF_IMG</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies> 
-	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+  	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 <dependency>
     <groupId>jakarta.servlet</groupId>
     <artifactId>jakarta.servlet-api</artifactId>
@@ -31,18 +31,13 @@
     <version>3.0.0</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+<!-- 
 <dependency>
-    <groupId>jakarta.el</groupId>
-    <artifactId>jakarta.el-api</artifactId>
-    <version>5.0.0</version>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>3.0.2</version>
 </dependency>
-
-<!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.el -->
-<dependency>
-    <groupId>org.glassfish</groupId>
-    <artifactId>jakarta.el</artifactId>
-    <version>5.0.0-M1</version>
-</dependency>
-</dependencies>
+-->
+  </dependencies>
 </project>
