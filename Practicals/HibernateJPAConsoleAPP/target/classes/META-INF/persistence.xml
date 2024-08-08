@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="myPersistenceUnit">
+        <class>crud.Employee</class>
+        <!-- JDBC Database connection settings -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/employee?autoReconnect=true&amp;SSL=false"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            
+            <!-- Specify dialect -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            
+            <!-- Automatically create and drop tables -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+            
+            <!-- Echo all executed SQL to stdout -->
+            <property name="hibernate.show_sql" value="true"/>
+            
+            <!-- Format SQL nicely -->
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- Root element of the Hibernate configuration file -->
+<hibernate-configuration>
+
+    <!-- Defines a session factory, which is the factory for obtaining Session instances -->
+    <session-factory>
+
+        <!-- Specifies the JDBC driver class for connecting to the database -->
+        <property name="jakarta.persistence.jdbc.driver">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Specifies the JDBC URL for connecting to the database -->
+        <property name="jakarta.persistence.jdbc.url">jdbc:mysql://localhost:3306/employee?autoReconnect=true&amp;useSSL=false</property>
+
+        <!-- Specifies the username for connecting to the database -->
+        <property name="jakarta.persistence.jdbc.user">root</property>
+
+        <!-- Specifies the password for connecting to the database (empty in this case) -->
+        <property name="jakarta.persistence.jdbc.password"></property>
+
+        <!-- Specifies the dialect of the database (in this case, MySQL) -->
+        <property name="jakarta.persistence.jdbc.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Enables logging of SQL statements (true) or disables it (false) -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Specifies the action to be taken when the schema is generated (in this case, update) -->
+        <property name="jakarta.persistence.schema-generation.database.action">update</property>
+
+        <!-- Formats SQL nicely (true) or not (false) -->
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Adds an annotated class (Employee) for Hibernate to manage -->
+        <mapping class="crud.Employee" />
+
+    </session-factory>
+
+</hibernate-configuration>

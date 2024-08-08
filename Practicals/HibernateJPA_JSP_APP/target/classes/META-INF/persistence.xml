@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Define the persistence configuration -->
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+             https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <!-- Define a persistence unit named "employee" -->
+    <persistence-unit name="employeePU" transaction-type="RESOURCE_LOCAL">
+        <!-- Specify the persistence provider (Hibernate in this case) -->
+        <provider>org.hibernate.orm.core.PersistenceProvider</provider>
+        
+        <!-- Define properties for the persistence unit -->
+        <properties>
+            <!-- JDBC driver class -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            
+            <!-- JDBC URL for the database connection -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/employee?autoReconnect=true&amp;useSSL=false"/>
+            
+            <!-- Database username -->
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            
+            <!-- Database password -->
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            
+            <!-- Hibernate dialect for the database -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            
+            <!-- Enable logging of SQL statements -->
+            <property name="hibernate.show_sql" value="true"/>
+            
+              <!-- Formats SQL nicely (true) or not (false) -->
+       		<property name="hibernate.format_sql" value="true"/>
+       		
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+               
+            <property name="hibernate.version" value="6.5.2.Final"/>
+            
+            <!-- Schema generation action (update, create, drop-and-create, etc.) -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

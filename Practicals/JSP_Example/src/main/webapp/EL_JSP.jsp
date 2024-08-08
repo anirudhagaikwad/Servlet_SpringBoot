@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Arrays" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,11 +38,18 @@
     <!-- Accessing list elements using EL -->
     <p>First Color: ${colors[0]}</p>
     
-    <!-- Using EL operators -->
+      <!-- Using EL operators -->
     <p>Sum of 10 and 20: ${10 + 20}</p>
-    <p>Is 10 greater than 5? ${10 > 5}</p>
-    <p>Logical AND (true && false): ${true && false}</p>
-    <p>Conditional Operator (3 > 2 ? 'Yes' : 'No'): ${3 > 2 ? 'Yes' : 'No'}</p>
-    
+ <p>Is 10 greater than 5? ${10 > 5}</p>
+<p>Logical AND (true && false): ${true && false}</p>
+<c:choose>
+    <c:when test="${3 > 2}">
+        <p>Conditional Operator (3 > 2 ? 'Yes' : 'No'): Yes</p>
+    </c:when>
+    <c:otherwise>
+        <p>Conditional Operator (3 > 2 ? 'Yes' : 'No'): No</p>
+    </c:otherwise>
+</c:choose>
+
 </body>
 </html>

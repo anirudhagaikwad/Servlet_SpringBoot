@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/hibernate-configuration-6.0.xsd">
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/employee?autoReconnect=true&amp;SSL=false</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        
+        <!-- Specify dialect -->
+       
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        
+        <!-- Automatically create and drop tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        
+        <!-- Format SQL nicely -->
+        <property name="hibernate.format_sql">true</property>
+        
+        <!-- Add annotated classes -->
+        <mapping class="crud.Employee" />
+    </session-factory>
+</hibernate-configuration>

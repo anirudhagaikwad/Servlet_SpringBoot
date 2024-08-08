@@ -1,0 +1,6 @@
+signupin\EmailPasswordFilter.class
+signupin\UserDAO.class
+signupin\WelcomeServlet.class
+signupin\LoginServlet.class
+signupin\RegisterServlet.class
+signupin\User.class

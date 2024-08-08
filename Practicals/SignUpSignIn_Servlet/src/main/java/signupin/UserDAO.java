@@ -1,34 +1,38 @@
 package signupin;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserDAO {
-    private static final String JDBC_URL = "jdbc:h2:~/test";
-    private static final String JDBC_USER = "sa";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/userdb?autoReconnect=true&useSSL=false";
+    private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "";
+    private static final Logger logger = Logger.getLogger(UserDAO.class.getName());
 
     public UserDAO() {
         try {
-            // Load the H2 database driver class
-            Class.forName("org.h2.Driver");
-            initializeDatabase();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            logger.info("MySQL driver loaded successfully.");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to load H2 driver", e);
+            logger.log(Level.SEVERE, "Failed to load MySQL driver.", e);
+            throw new RuntimeException("Failed to load MySQL driver.", e);
         }
+        initializeDatabase();
     }
 
     private void initializeDatabase() {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
              Statement statement = connection.createStatement()) {
-
             String sql = "CREATE TABLE IF NOT EXISTS Users (" +
                          "id INT AUTO_INCREMENT PRIMARY KEY," +
                          "email VARCHAR(255) NOT NULL UNIQUE," +
                          "password VARCHAR(255) NOT NULL)";
             statement.executeUpdate(sql);
+            logger.info("Table Users created or already exists.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to create table in MySQL.", e);
+            throw new RuntimeException("Failed to create table in MySQL.", e);
         }
     }
 
@@ -41,7 +45,7 @@ public class UserDAO {
                 return new User(resultSet.getInt("id"), resultSet.getString("email"), resultSet.getString("password"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to retrieve user by email.", e);
         }
         return null;
     }
@@ -52,8 +56,9 @@ public class UserDAO {
             statement.setString(1, email);
             statement.setString(2, password);
             statement.executeUpdate();
+            logger.info("User added successfully.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to add user.", e);
         }
     }
 }

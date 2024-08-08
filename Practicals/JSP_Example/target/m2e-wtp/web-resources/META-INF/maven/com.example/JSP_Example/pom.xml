@@ -5,6 +5,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies> 
+      <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
+            <scope>provided</scope>
+        </dependency>
 	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 <dependency>
     <groupId>jakarta.servlet</groupId>
@@ -17,13 +23,14 @@
     <groupId>jakarta.servlet.jsp</groupId>
     <artifactId>jakarta.servlet.jsp-api</artifactId>
     <version>4.0.0</version>
-    <scope>provided</scope>
+    <scope>provided</scope> 
 </dependency>
 <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
 <dependency>
     <groupId>jakarta.servlet.jsp.jstl</groupId>
     <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
     <version>3.0.0</version>
+    <scope>provided</scope> 
 </dependency>
 <dependency>
     <groupId>org.glassfish.web</groupId>
