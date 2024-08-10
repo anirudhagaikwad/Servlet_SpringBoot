@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Define the persistence configuration -->
-<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence"
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
-             https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
-
-    <!-- Define a persistence unit named "employee" -->
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <!-- Define a persistence unit named employeePU -->
     <persistence-unit name="employeePU" transaction-type="RESOURCE_LOCAL">
-        <!-- Specify the persistence provider (Hibernate in this case) -->
-        <provider>org.hibernate.orm.core.PersistenceProvider</provider>
         
+        <!-- Define the managed entity classes -->
+        <class>crud.Employee</class>
+
         <!-- Define properties for the persistence unit -->
         <properties>
             <!-- JDBC driver class -->
@@ -24,19 +23,15 @@
             <!-- Database password -->
             <property name="jakarta.persistence.jdbc.password" value=""/>
             
-            <!-- Hibernate dialect for the database -->
+            <!-- Hibernate dialect for MySQL 8 -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             
             <!-- Enable logging of SQL statements -->
             <property name="hibernate.show_sql" value="true"/>
             
-              <!-- Formats SQL nicely (true) or not (false) -->
-       		<property name="hibernate.format_sql" value="true"/>
-       		
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-               
-            <property name="hibernate.version" value="6.5.2.Final"/>
-            
+            <!-- Formats SQL nicely (true) or not (false) -->
+            <property name="hibernate.format_sql" value="true"/>
+
             <!-- Schema generation action (update, create, drop-and-create, etc.) -->
             <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
         </properties>

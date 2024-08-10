@@ -9,46 +9,56 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 </properties>
 
-  <dependencies> 
- <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
-<dependency>
-    <groupId>org.hibernate.orm</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>6.5.2.Final</version>
-</dependency>
+<dependencyManagement>
+    <dependencies>
+       <!-- Jakarta EE Platform BOM -->
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-bom</artifactId>
+            <version>10.0.0</version> <!-- Version aligned with Jakarta EE 10 -->
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-platform</artifactId>
+            <version>6.5.2.Final</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+<!-- use the versions from the platform -->
+<dependencies>
+    <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>jakarta.transaction</groupId>
+        <artifactId>jakarta.transaction-api</artifactId>
+    </dependency>
+    <dependency>
+	    <groupId>jakarta.persistence</groupId>
+	    <artifactId>jakarta.persistence-api</artifactId>
+	</dependency>
+      <!-- Jakarta Activation API (optional, add if needed) -->
+    <dependency>
+        <groupId>jakarta.activation</groupId>
+        <artifactId>jakarta.activation-api</artifactId>
+    </dependency>
+
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 <dependency>
     <groupId>com.mysql</groupId>
     <artifactId>mysql-connector-j</artifactId>
     <version>8.4.0</version>
 </dependency>
-<!-- JPA API Dependency (required for JPA annotations and EntityManager) -->
-<!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
-<dependency>
-    <groupId>jakarta.persistence</groupId>
-    <artifactId>jakarta.persistence-api</artifactId>
-    <version>3.2.0</version>
-</dependency>
 
-<!-- SLF4J API (Hibernate uses SLF4J for logging)
-SLF4J for logging because Hibernate 6.5 relies on SLF4J as its logging facade.
-The SLF4J API provides a simple and unified interface for logging, which allows you to plug in various logging implementations.
-Hibernate will automatically use SLF4J for logging if you have the slf4j-api dependency in your classpath. 
-The slf4j-simple dependency provides a basic implementation that outputs logs to the console.
- -->
-<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>2.0.13</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>2.0.13</version>
-</dependency>        
-  </dependencies>
+</dependencies>
+
   <build>
     <plugins>
         <plugin>

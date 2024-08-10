@@ -1,0 +1,51 @@
+package crud;
+
+import jakarta.persistence.EntityManagerFactory;
+import org.hibernate.jpa.HibernatePersistenceProvider;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HibernateUtil {
+
+    private static EntityManagerFactory entityManagerFactory;
+
+    static {
+        try {
+            // Configuration properties for Hibernate
+            Map<String, Object> properties = new HashMap<>();
+            
+            // JDBC configuration using JPA standard properties
+            properties.put("jakarta.persistence.jdbc.driver", "com.mysql.cj.jdbc.Driver");
+            properties.put("jakarta.persistence.jdbc.url", "jdbc:mysql://localhost:3306/employee?autoReconnect=true&useSSL=false");
+            properties.put("jakarta.persistence.jdbc.user", "root");
+            properties.put("jakarta.persistence.jdbc.password", "");
+            
+            // JPA/Hibernate properties
+            properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+            properties.put("hibernate.show_sql", "true");
+            properties.put("hibernate.format_sql", "true");
+            properties.put("hibernate.hbm2ddl.auto", "update");
+            
+            // Specify the persistence provider
+            properties.put("jakarta.persistence.provider", HibernatePersistenceProvider.class.getName());
+
+            // Create the EntityManagerFactory programmatically
+            entityManagerFactory = new HibernatePersistenceProvider()
+                    .createEntityManagerFactory("employeePU", properties);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ExceptionInInitializerError("Initial EntityManagerFactory creation failed." + e);
+        }
+    }
+
+    public static EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory;
+    }
+
+    public static void shutdown() {
+        if (entityManagerFactory != null) {
+            entityManagerFactory.close();
+        }
+    }
+}

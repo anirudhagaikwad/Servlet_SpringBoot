@@ -59,9 +59,9 @@ public class App {
         
         // Create a new employee
         Employee employee = new Employee();
-        employee.setFirstName("John");
-        employee.setLastName("Doe");
-        employee.setEmail("john.doe@example.com");
+        employee.setFirstName("Anirudha");
+        employee.setLastName("Gaikwad");
+        employee.setEmail("ani@example.com");
         employee.setPhoneNumber("1234567890");
         employee.setHireDate(Date.valueOf("2023-01-01"));
         employee.setSalary(50000.00);

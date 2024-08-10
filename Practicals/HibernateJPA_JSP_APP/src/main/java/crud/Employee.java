@@ -1,5 +1,8 @@
 package crud;
-
+/*
+This Employee.java file defines the Employee entity with attributes such as empId, firstName, lastName, email, phoneNumber, hireDate, and salary.
+It also includes getters and setters for each attribute.
+*/
 import java.math.BigDecimal;
 import java.util.Date;
 

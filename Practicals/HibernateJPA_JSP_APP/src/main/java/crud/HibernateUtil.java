@@ -4,12 +4,14 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class HibernateUtil {
+
     private static final EntityManagerFactory entityManagerFactory;
 
     static {
         try {
             entityManagerFactory = Persistence.createEntityManagerFactory("employeePU");
         } catch (Throwable ex) {
+        	 System.err.println("Initial EntityManagerFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
@@ -18,7 +20,9 @@ public class HibernateUtil {
         return entityManagerFactory;
     }
 
-    public static void close() {
-        entityManagerFactory.close();
+    public static void shutdown() {
+        if (entityManagerFactory != null) {
+            entityManagerFactory.close();
+        }
     }
 }

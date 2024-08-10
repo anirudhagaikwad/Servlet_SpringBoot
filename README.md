@@ -34,6 +34,10 @@ Each section includes detailed examples, best practices, and exercises to help y
 | 19|JSP program to demonstrate jsp: forward action tag  | https://github.com/anirudhagaikwad/Servlet_SpringBoot/blob/master/Practicals/JSP_Example/src/main/webapp/jspActionTags.jsp |
 | 20| JSP program to request implicit object | https://github.com/anirudhagaikwad/Servlet_SpringBoot/blob/master/Practicals/JSP_Example/src/main/webapp/requestImplicitObject.jsp |
 | 21|Write a Servlet-JSP program to send username and password using HTML forms and authenticate the user | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/SignUpSignIn_JSP |
+| 22|Create web application to store the data in database to perform Hibernate CRUD operations | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/HibernateNativeJSP_APP |
+| 23|Create web application to store the data in database to perform Hibernate CRUD operations with JPA |  https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/HibernateJPA_JSP_APP |
+| 24|Create Console application to store the data in database to perform Hibernate CRUD operations | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/HibernateConsoleApp |
+| 25|---------------- | ----------------------------- |
 | -----|---------------- | ----------------------------- |
 
 

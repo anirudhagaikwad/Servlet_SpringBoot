@@ -18,12 +18,14 @@ import java.util.List;
 @WebServlet("/employee")
 public class EmployeeServlet extends HttpServlet {
 
-    private EntityManagerFactory entityManagerFactory;
+	private static final long serialVersionUID = 1L;
+	private EntityManagerFactory entityManagerFactory;
 
-    @Override
-    public void init() throws ServletException {
-        entityManagerFactory = HibernateUtil.getEntityManagerFactory();
-    }
+	@Override
+	public void init() throws ServletException {
+	    entityManagerFactory = HibernateUtil.getEntityManagerFactory();
+	}
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
