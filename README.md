@@ -37,8 +37,8 @@ Each section includes detailed examples, best practices, and exercises to help y
 | 22|Create web application to store the data in database to perform Hibernate CRUD operations | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/HibernateNativeJSP_APP |
 | 23|Create web application to store the data in database to perform Hibernate CRUD operations with JPA |  https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/HibernateJPA_JSP_APP |
 | 24|Create Console application to store the data in database to perform Hibernate CRUD operations | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/HibernateConsoleApp |
-| 25|---------------- | ----------------------------- |
-| -----|---------------- | ----------------------------- |
+| 25| Create a web application to store the data in database with spring boot | https://github.com/anirudhagaikwad/Servlet_SpringBoot/tree/master/Practicals/SpringBootCRUD |
+| |---------------- | ----------------------------- |
 
 
 ***
